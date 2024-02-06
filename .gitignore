@@ -1,3 +1,9 @@
+# iTunes
+.DS_Store
+
+# Secrets
+.env.local
+
 # Logs
 logs
 *.log

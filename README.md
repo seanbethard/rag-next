@@ -1,1 +1,1 @@
-# rag-nextjs
+# rag-next

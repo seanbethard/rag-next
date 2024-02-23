@@ -8,7 +8,7 @@ import { NavSearchActions } from '@/components/nav/nav-blob-actions'
 import { NavFooter } from '@/components/nav/nav-footer'
 import { NavHeading } from '@/components/nav/nav-heading'
 import { NavLinks } from '@/components/nav/nav-links'
-import { CultIcon } from '@/components/ui/icons'
+// import { CultIcon } from '@/components/ui/icons'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Separator } from '@/components/ui/separator'
 import { Sheet, SheetContent, SheetHeader } from '@/components/ui/sheet'
@@ -22,7 +22,7 @@ export function MobileLayout({ historyChildren, children, user }) {
     <div>
       <div className="absolute top-3 left-3">
         <Link href="/" className=" flex items-center space-x-3">
-          <CultIcon className="h-9 w-9  " />
+          {/*<CultIcon className="h-9 w-9  " />*/}
         </Link>
       </div>
       <Sheet open={isMobileNavOpen} onOpenChange={setIsMobileNavOpen}>

@@ -61,7 +61,7 @@ export function OTPForm() {
 
     if (error) {
       if (error instanceof AuthApiError && error.status === 400) {
-        setMessage('Invalid credentials.')
+        setMessage('無効')
         return
       }
       setMessage(error.message)
@@ -71,7 +71,7 @@ export function OTPForm() {
     // reset form
     setFormData({ email: '' })
     setFormSuccess(true)
-    setMessage('Please check your email for a magic link to access downloads.')
+    setMessage('メールを確認')
   }
   return (
     <div className=" max-w-xs">
@@ -83,14 +83,14 @@ export function OTPForm() {
             <Info className="h-4 w-4 text-red-400" />
           )}
           <MailOpenIcon className="h-4 w-4" />
-          <AlertTitle>Check your email</AlertTitle>
+          <AlertTitle>魔法のリンク</AlertTitle>
           <AlertDescription>{message}</AlertDescription>
         </Alert>
       ) : null}
 
       <form onSubmit={handleSubmit}>
         <div>
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">メール</Label>
           <Input
             id="email"
             name="email"
@@ -101,7 +101,7 @@ export function OTPForm() {
         </div>
         {errors?.email ? <InputErrorMessage>{errors?.email}</InputErrorMessage> : null}
         <div className="form-control mt-6 w-full">
-          <Button className="btn btn-primary w-full no-animation">Sign in with email</Button>
+          <Button className="btn btn-primary w-full no-animation">通る</Button>
         </div>
       </form>
     </div>

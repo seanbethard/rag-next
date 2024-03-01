@@ -29,7 +29,7 @@ export function UploadState() {
 
   // Configure settings for file support + file size here
   const { getRootProps, getInputProps, isDragActive, acceptedFiles, fileRejections } = useDropzone({
-    maxSize: 5000000,
+    maxSize: 50000000,
     multiple: false,
     maxFiles: 1,
     accept: {
@@ -124,7 +124,7 @@ export function UploadState() {
                         ? acceptedFileItems
                         : fileRejections.length >= 1
                           ? fileRejectionItems
-                          : '2 MB limit'}
+                          : '50 MB limit'}
                     </span>
                   </p>
                 </>

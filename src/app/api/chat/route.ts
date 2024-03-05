@@ -9,7 +9,7 @@ import OpenAI from 'openai'
 import { createClient } from '@/db/server'
 
 import { RAG_CONFIG } from './config'
-import { createRagPrompt } from './prompt'
+import { createClosedDomainRAGPrompt } from './prompt'
 import { combineDocuments, encodeSources } from './utils'
 
 export async function POST(req: NextRequest) {
@@ -30,9 +30,30 @@ export async function POST(req: NextRequest) {
 
   const documents = await getSimilarDocuments(db, setName, latestUserMessageContent)
 
-  const prompt = createRagPrompt({
+  const prompt = createClosedDomainRAGPrompt({
     context: combineDocuments(documents),
     question: latestUserMessageContent,
+    domain: 'motorcycle repair',
+    role: 'motorcycle technician',
+    expertise:
+        'wheels, ' +
+        'tires, ' +
+        'braking systems, ' +
+        'carburetor fuel systems, ' +
+        'electrical systems, ' +
+        'suspension systems, ' +
+        'drivetrain service, ' +
+        'custom motorcycles',
+    credentials:
+        'Multimeter Certification 525, ' +
+        'Multimeter Certification 596',
+    wakewords:
+        'BIKERSCUM, ' +
+        'SCUMBAG, ' +
+        'SCUM, ' +
+        'BIKERSKUM, ' +
+        'SKUMBAG, ' +
+        'SKUM'
   })
 
   const openai = new OpenAI({

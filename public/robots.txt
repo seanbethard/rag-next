@@ -1,0 +1,76 @@
+# Doesn't match AdsBot crawlers, which must be named explicitly.
+# Doesn't match Google ``Safety'' crawlers even if named explicitly.
+User-agent: *
+Disallow: /
+
+# This user agent ignores robots.txt rules.
+User-agent: Google-Safety
+Disallow: /
+
+# Crawls through certain types of pages.
+User-agent: Storebot-Google
+Disallow: /
+
+# Helps improve Gemini Apps and Vertex AI generative APIs,
+# including future generations of models that power those products.
+User-agent: Google-Extended
+Disallow: /
+
+# Used by product teams for one-off crawls for internal research and development.
+User-agent: GoogleOther
+Disallow: /
+
+# Used for building Google's search indices,
+# other product specific crawls, and for analysis.
+User-agent: Googlebot
+Disallow: /
+
+# Visits (crawls) your site to determine its content
+# in order to provide relevant ads.
+User-agent: Mediapartners-Google
+Disallow: /
+
+# Checks desktop web page ad quality.
+User-agent: AdsBot-Google
+Disallow: /
+
+# Checks iPhone web page ad quality.
+User-agent: AdsBot-Google-Mobile
+Disallow: /
+
+# Used for crawling image bytes for Google Images and products.
+User-agent: Googlebot-Image
+Disallow: /
+
+# Used for crawling video bytes for Google Video and products.
+User-agent: Googlebot-Video
+Disallow: /
+
+# Uses Googlebot for crawling news articles.
+User-agent: Googlebot-News
+Disallow: /
+
+# Fetches and processes feeds to be used in Google News landing pages.
+User-agent: GoogleProducer
+Disallow: /
+
+# Used for crawling RSS or Atom feeds for
+# Google Podcasts, Google News, and PubSubHubbub.
+User-agent: FeedFetcher-Google
+Disallow: /
+
+# Used by Rich Result Test and URL inspection in Search Console.
+User-agent: Google-InspectionTool
+Disallow: /
+
+# Used by Google APIs to deliver push notification messages.
+User-agent: APIs-Google
+Disallow: /
+
+# Fetches and reads out web pages using text-to-speech (TTS).
+User-agent: Google-Read-Aloud
+Disallow: /
+
+# Fetches Search Console verification tokens.
+User-agent: Google-Site-Verification
+Disallow: /

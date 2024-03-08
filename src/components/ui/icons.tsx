@@ -3,6 +3,11 @@
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
+import Image from "next/image";
+
+export function BikerScumGif({ id, alt }) {
+  return <Image src={`/${id}.gif`} alt={alt} width="96" height="84" />
+}
 
 export function AwardIcon1(props) {
   return (
@@ -1045,25 +1050,6 @@ function FilterIcon(props) {
   )
 }
 
-// function CultIcon(props) {
-//   return (
-//     <svg
-//       width={260}
-//       height={478}
-//       viewBox="0 0 260 478"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//       {...props}
-//     >
-//       <path
-//         className="dark:fill-brand-500 fill-neutral-900"
-//         d="M130 216.896c-23.894 0-43.333-19.439-43.333-43.333S106.106 130.23 130 130.23s43.333 19.439 43.333 43.333-19.439 43.333-43.333 43.333zm0 173.794c23.894 0 43.333 19.439 43.333 43.333S153.894 477.356 130 477.356s-43.333-19.439-43.333-43.333S106.106 390.69 130 390.69zm86.667-304.023c-23.895 0-43.334-19.44-43.334-43.334C173.333 19.44 192.772 0 216.667 0 240.561 0 260 19.439 260 43.333c0 23.895-19.439 43.334-43.333 43.334zm0 173.792c23.894 0 43.333 19.439 43.333 43.334 0 23.894-19.439 43.333-43.333 43.333-23.895 0-43.334-19.439-43.334-43.333 0-23.895 19.439-43.334 43.334-43.334zM43.333 86.667C19.44 86.667 0 67.227 0 43.333 0 19.44 19.439 0 43.333 0c23.895 0 43.334 19.439 43.334 43.333 0 23.895-19.44 43.334-43.334 43.334zm0 173.792c23.895 0 43.334 19.439 43.334 43.334 0 23.894-19.44 43.333-43.334 43.333C19.44 347.126 0 327.687 0 303.793c0-23.895 19.439-43.334 43.333-43.334z"
-//         fill="#000"
-//       />
-//     </svg>
-//   )
-// }
-
 enum Status {
   Idle = 'idle',
   Loading = 'loading',
@@ -1333,7 +1319,6 @@ export function formatBytes(bytes: number, decimals = 2): string {
 }
 
 export {
-  // CultIcon,
   FilterIcon,
   MapIcon,
   PlusIcon,

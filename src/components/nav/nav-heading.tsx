@@ -3,7 +3,7 @@
 import Link from 'next/link'
 
 import { Heading } from '@/components/cult/gradient-heading'
-// import { CultIcon } from '@/components/ui/icons'
+import {BikerScumGif} from "@/components/ui/icons";
 
 export function NavHeading({ isCollapsed }) {
   return (
@@ -16,8 +16,9 @@ export function NavHeading({ isCollapsed }) {
         }
       >
         <Link href="/" className=" flex justify-center items-center space-x-4">
-          {/*<CultIcon className="h-8 w-8 md:h-13 -mt-3 sm:mt-0 " />*/}
-          {!isCollapsed ? <Heading>ハイパー</Heading> : null}
+            <BikerScumGif id="bikerscum" alt="Biker Scum" />
+            <br/>
+          {/*{!isCollapsed ? <Heading size="xxs" >Biker Scum</Heading>: null}*/}
         </Link>
       </div>
     </div>

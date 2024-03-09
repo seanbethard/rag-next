@@ -22,7 +22,7 @@ export default async function SignIn() {
             <div>
               <Heading size="xxl">Biker Scum</Heading>
               <Heading size="xs" variant="secondary" className="-mt-2 md:-mt-4">
-                Finally, a motorcycle mechanic that can reed good
+                finally, a motorcycle mechanic that can reed good
               </Heading>
             </div>
           </div>

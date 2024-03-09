@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from 'react'
 import { AuthApiError } from '@supabase/supabase-js'
-import { Info, MailOpenIcon } from 'lucide-react'
+import { Info, Zap } from 'lucide-react'
 import { z, ZodError } from 'zod'
 
 import { useSupabase } from '@/app/supabase-provider'
@@ -55,7 +55,7 @@ export function OTPForm() {
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: `${new URL(location.href).origin}/auth/callback?next=chat`,
+        emailRedirectTo: `${new URL(location.href).origin}/auth/callback?next=shop`,
       },
     })
 
@@ -71,26 +71,26 @@ export function OTPForm() {
     // reset form
     setFormData({ email: '' })
     setFormSuccess(true)
-    setMessage('Please check your email for a magic link to access Biker Scum.')
+    setMessage('Please check your inbox for a magic link.')
   }
   return (
     <div className=" max-w-xs">
       {message ? (
         <Alert variant={formSuccess ? 'success' : 'destructive'} className="mb-10">
           {formSuccess ? (
-            <MailOpenIcon className="h-4 w-4 stroke-green-400" />
+            <Zap className="h-4 w-4 stroke-gray-400" />
           ) : (
             <Info className="h-4 w-4 text-red-400" />
           )}
-          <MailOpenIcon className="h-4 w-4" />
-          <AlertTitle>Magic link sent</AlertTitle>
+          <Zap className="h-4 w-4" />
+          <AlertTitle>Info</AlertTitle>
           <AlertDescription>{message}</AlertDescription>
         </Alert>
       ) : null}
 
       <form onSubmit={handleSubmit}>
         <div>
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">Sign in</Label>
           <Input
             id="email"
             name="email"
@@ -101,7 +101,7 @@ export function OTPForm() {
         </div>
         {errors?.email ? <InputErrorMessage>{errors?.email}</InputErrorMessage> : null}
         <div className="form-control mt-6 w-full">
-          <Button className="btn btn-primary w-full no-animation">Sign in with email</Button>
+          <Button className="btn btn-primary w-full no-animation">Enter the Meathead</Button>
         </div>
       </form>
     </div>

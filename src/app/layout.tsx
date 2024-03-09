@@ -15,6 +15,7 @@ import { createClient } from '@/db/server'
 import { cn } from '@/lib/utils'
 
 import SupabaseProvider from './supabase-provider'
+import React from "react";
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -27,8 +28,13 @@ export const metadata: Metadata = {
     template: ` ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ['Next.js', 'React', 'Tailwind CSS', 'Server Components'],
-  creator: 'you',
+  keywords: [
+      'biker scum',
+    'motorcycle repair',
+    'domain adaptation',
+    'speech recognition',
+    'augmented reality'],
+  creator: 'Sean Bethard',
 }
 
 interface RootLayoutProps {
@@ -44,7 +50,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en">
-        <head />
+        <head ><title></title></head>
         <body
           className={cn(
             ' bg-background dark:bg-offBlack-950 font-sans antialiased ',
@@ -53,7 +59,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >

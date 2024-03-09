@@ -21,16 +21,16 @@ export default async function SignIn() {
             <BikerScumGif id="bikerscum" alt="Biker Scum" />
             <div>
               <Heading size="xxl">Biker Scum</Heading>
-              <Heading size="sm" variant="secondary" className="-mt-2 md:-mt-4">
-                Gatekeeper
+              <Heading size="xs" variant="secondary" className="-mt-2 md:-mt-4">
+                Finally, a motorcycle mechanic that can reed good
               </Heading>
             </div>
           </div>
           <div className="flex items-center justify-center pt-12 md:pt-24 ">
             <Card>
               <CardHeader>
-                <CardTitle>Sign in</CardTitle>
-                <CardDescription>Welcome to Biker Scum</CardDescription>
+                <CardTitle>Repair procedures for humans</CardTitle>
+                <CardDescription>Wiring diagrams for scumbags</CardDescription>
               </CardHeader>
               <CardContent className=" space-y-2">
                 <div className="space-y-2 w-full min-w-[16rem] lg:min-w-[24rem]">

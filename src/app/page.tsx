@@ -12,6 +12,6 @@ export default async function SignIn() {
   }
 
   if (session) {
-    return redirect('/chat')
+    return redirect('/shop')
   }
 }

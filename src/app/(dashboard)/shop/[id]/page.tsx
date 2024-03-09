@@ -10,26 +10,26 @@ export const runtime = 'edge'
 export const preferredRegion = 'home'
 export const dynamic = 'force-dynamic'
 
-export interface ChatPageProps {
+export interface ShopPageProps {
   params: {
     id: string
   }
 }
 
-export default async function ChatPage({ params }: ChatPageProps) {
+export default async function ShopPage({ params }: ShopPageProps) {
   const db = createClient(cookies())
   const {
     data: { session },
   } = await db.auth.getSession()
 
   if (!session?.user) {
-    redirect(`/auth/sign-in?next=/chat/${params.id}`)
+    redirect(`/auth/sign-in?next=/shop/${params.id}`)
   }
 
   const { payload, sources } = await getChatWithSources(params.id)
 
   if (!payload) {
-    redirect('/chat')
+    redirect('/shop')
   }
 
   if (payload?.userId !== session?.user?.id) {

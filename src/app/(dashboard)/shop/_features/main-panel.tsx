@@ -105,7 +105,14 @@ const ChatSection = ({ messages, sources, isLoading }) => {
         </div>
       ) : (
         <div className="pt-64 md:pt-16">
-          <Heading>Where knowledge begins</Heading>
+          <Heading>Hello and welcome to the Biker Scum shop!
+            I'm Biker Scum, the first virtual motorcycle mechanic.
+            I'm here to assist you with all aspects of motorcycle repair.
+            I may be a little wet behind the ears but I'm a fast learner.
+            I specialize in carbureted Harley-Davidson motorcycles from 1903-1999.
+            If I'm struggling with a topic you can increase the odds of me
+            coming up with something useful by sharing relevant info with me.
+          </Heading>
         </div>
       )}
     </div>

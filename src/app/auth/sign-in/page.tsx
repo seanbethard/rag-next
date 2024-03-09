@@ -21,8 +21,8 @@ export default async function SignIn() {
             <BikerScumGif id="bikerscum" alt="Biker Scum" />
             <div>
               <Heading size="xxl">Biker Scum</Heading>
-              <Heading size="xs" variant="secondary" className="-mt-2 md:-mt-4">
-                finally, a motorcycle mechanic that can reed good
+              <Heading size="xxs" variant="secondary" className="-mt-2 md:-mt-4">
+                yet another virtual motorcycle technician
               </Heading>
             </div>
           </div>

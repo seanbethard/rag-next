@@ -15,7 +15,7 @@ export async function getChats(userId?: string | null) {
     return []
   }
   try {
-    const db = createClient(cookies())
+    const db = createClient(await cookies())
     const { data } = await db
       .from('chats')
       .select('payload')
@@ -31,7 +31,7 @@ export async function getChats(userId?: string | null) {
 
 export async function removeChat({ id, path }: { id: string; path: string }) {
   try {
-    const db = createClient(cookies())
+    const db = createClient(await cookies())
     await db.from('chats').delete().eq('id', id).throwOnError()
 
     revalidatePath('/')
@@ -51,7 +51,7 @@ export async function clearChats() {
     }
   }
   try {
-    const db = createClient(cookies())
+    const db = createClient(await cookies())
     await db.from('chats').delete().eq('user_id', userId).throwOnError()
     revalidatePath('/')
   } catch (error) {
@@ -62,7 +62,7 @@ export async function clearChats() {
 }
 
 export async function getSharedChat(id: string) {
-  const db = createClient(cookies())
+  const db = createClient(await cookies())
   const { data } = await db
     .from('chats')
     .select('payload')
@@ -79,7 +79,7 @@ export async function shareChat(chat: Chat) {
     sharePath: `/share/${chat.id}`,
   }
 
-  const db = createClient(cookies())
+  const db = createClient(await cookies())
   await db
     .from('chats')
     .update({ payload: payload as any })
@@ -90,7 +90,7 @@ export async function shareChat(chat: Chat) {
 }
 
 export async function getChatWithSources(id: string): Promise<ChatWithSources> {
-  const db = createClient(cookies())
+  const db = createClient(await cookies())
 
   // Fetch chat payload
   const { data: chatData, error: chatError } = await db

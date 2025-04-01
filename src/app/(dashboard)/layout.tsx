@@ -9,7 +9,7 @@ import { createClient } from '@/db/server'
 export const dynamic = 'force-dynamic'
 
 export default async function Layout({ children }) {
-  const db = createClient(cookies())
+  const db = createClient(await cookies())
   const {
     data: { user },
   } = await db.auth.getUser()

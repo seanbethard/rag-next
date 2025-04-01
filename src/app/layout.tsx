@@ -42,7 +42,7 @@ interface RootLayoutProps {
 }
 
 export default async function RootLayout({ children }: RootLayoutProps) {
-  const supabase = createClient(cookies())
+  const supabase = createClient(await cookies())
   const {
     data: { session },
   } = await supabase.auth.getSession()

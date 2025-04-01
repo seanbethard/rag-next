@@ -9,7 +9,7 @@ import { createClient } from '@/db/server'
 
 export async function removeDocument({ id, path }: { id: string; path: string }) {
   try {
-    const db = createClient(cookies())
+    const db = createClient(await cookies())
     await db.from('document_sections').delete().eq('id', id).throwOnError()
 
     revalidatePath('/library')
@@ -23,7 +23,7 @@ export async function removeDocument({ id, path }: { id: string; path: string })
 
 export async function searchDocuments({ query }: { query: string }) {
   try {
-    const db = createClient(cookies())
+    const db = createClient(await cookies())
 
     const { data: results, error } = await db
       .from('document_sections')
@@ -41,7 +41,7 @@ export async function searchDocuments({ query }: { query: string }) {
 
 export async function getAllDocuments() {
   try {
-    const db = createClient(cookies())
+    const db = createClient(await cookies())
 
     const { count } = await db.from('document_sections').select('id', { count: 'exact' })
 

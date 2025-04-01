@@ -13,7 +13,7 @@ export const runtime = 'nodejs'
  * with the initialized database client.
  */
 async function getUserSession() {
-  const supabase = createClient(cookies())
+  const supabase = createClient(await cookies())
   const {
     data: { session },
   } = await supabase.auth.getSession()

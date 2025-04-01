@@ -11,13 +11,14 @@ export const preferredRegion = 'home'
 export const dynamic = 'force-dynamic'
 
 export interface ShopPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-export default async function ShopPage({ params }: ShopPageProps) {
-  const db = createClient(cookies())
+export default async function ShopPage(props: ShopPageProps) {
+  const params = await props.params;
+  const db = createClient(await cookies())
   const {
     data: { session },
   } = await db.auth.getSession()

@@ -6,12 +6,11 @@ import { createClient } from '@/db/server'
 
 export async function GET(
   req: NextRequest,
-  {
-    params, // searchParams,
-  }: {
-    params: { slug: string }
-  },
+  props: {
+    params: Promise<{ slug: string }>
+  }
 ) {
+  const params = await props.params;
   const provider = params.slug as Provider
   const { searchParams } = new URL(req.url)
   const next = searchParams.get('next')
@@ -26,7 +25,7 @@ export async function GET(
   }
 
   if (provider) {
-    const cookieStore = cookies()
+    const cookieStore = await cookies()
     const supabase = createClient(cookieStore)
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider,

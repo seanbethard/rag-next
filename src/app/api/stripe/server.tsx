@@ -22,7 +22,7 @@ export async function StripeCheckout({
   // Stripe React Server Component to create Checkout session
   async function createStripeSession() {
     'use server'
-    const headersList = headers()
+    const headersList = await headers()
 
     try {
       const session = await stripe.checkout.sessions.create({

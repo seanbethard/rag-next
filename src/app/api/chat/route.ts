@@ -13,7 +13,7 @@ import { createClosedDomainRAGPrompt } from './prompt'
 import { combineDocuments, encodeSources } from './utils'
 
 export async function POST(req: NextRequest) {
-  const db = createClient(cookies())
+  const db = createClient(await cookies())
   const {
     data: { session },
   } = await db.auth.getSession()

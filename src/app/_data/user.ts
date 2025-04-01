@@ -7,7 +7,7 @@ import { cookies } from 'next/headers'
 import { createClient } from '@/db/server'
 
 export async function getSession() {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
   try {
     const {
@@ -20,7 +20,7 @@ export async function getSession() {
 }
 
 export async function getUserDetails() {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
   try {
     const { data: userDetails } = await supabase.from('users').select('*').single()
@@ -31,7 +31,7 @@ export async function getUserDetails() {
 }
 
 export async function getSubscription() {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
   try {
     const { data: subscription } = await supabase
@@ -97,7 +97,7 @@ export async function getUserDocumentSets() {
   const id = await getCurrentUserId()
   if (!id) return []
 
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
 
   const { data, error } = await supabase

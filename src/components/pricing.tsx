@@ -14,7 +14,7 @@ export async function LifetimePayment() {
   const ONE_TIME_PAYMENT_TYPE = 'lifetime' // null
   const PRICE = 5_00
 
-  const db = createClient(cookies())
+  const db = createClient(await cookies())
   const hasLicense = await getLifetimePaymentStatus(db)
   const session = await getSession()
 

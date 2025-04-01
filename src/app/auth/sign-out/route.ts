@@ -4,7 +4,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { createClient } from '@/db/server'
 
 export async function POST(req: NextRequest) {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
 
   // Check if we have a session

@@ -105,7 +105,7 @@ async function getEmbeddings(input: string): Promise<number[]> {
 const chunkedBatchInsert = async ({ enrichedVectors }: { enrichedVectors: any[] }) => {
   // Pass the array as part of an object to sliceIntoBatches
   const batches = sliceIntoBatches({ arr: enrichedVectors })
-  const supabase = createClient(cookies())
+  const supabase = createClient(await cookies())
 
   try {
     await Promise.allSettled(

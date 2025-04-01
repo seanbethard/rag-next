@@ -21,7 +21,8 @@ const SearchParamsSchema = z.object({
   search: z.string().max(256).optional().default(''),
 })
 
-export default async function Library({ searchParams }: any) {
+export default async function Library(props: any) {
+  const searchParams = await props.searchParams;
   const session = await loadUserSession()
 
   const query = SearchParamsSchema.safeParse(searchParams)
